@@ -1,0 +1,36 @@
+name: Build and deploy
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      PERSONAL_NPM_TOKEN: ${{ secrets.PERSONAL_NPM_TOKEN }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install modules
+        run: yarn install
+
+      - name: Build entries
+        run: yarn build
+
+      - name: Check packages versions
+        run: yarn version check
+
+      - name: Apply versions
+        if: github.ref == 'refs/heads/master'
+        run: yarn version apply --all
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        if: github.ref == 'refs/heads/master'
+        with:
+          commit_message: 'ci: Release packages'
+
+      - name: Publish packages
+        if: github.ref == 'refs/heads/master'
+        run: yarn workspaces foreach --interlaced --verbose npm publish --tolerate-republish
