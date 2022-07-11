@@ -1,0 +1,4 @@
+{
+  "extends": "eslint-config-fuks/tsconfig.json",
+  "include": [".eslintrc.js"]
+}

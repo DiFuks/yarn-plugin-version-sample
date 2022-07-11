@@ -1,0 +1,18 @@
+{
+  "name": "yarn-plugin-version-sample",
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": "https://github.com/DiFuks/yarn-plugin-version-sample",
+  "version": "1.0.0",
+  "author": "Dmitry Fuks",
+  "license": "MIT",
+  "private": true,
+  "packageManager": "yarn@3.2.1",
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.1.4",
+    "eslint": "^8.19.0",
+    "eslint-config-fuks": "^1.8.1",
+    "typescript": "^4.7.4"
+  }
+}
