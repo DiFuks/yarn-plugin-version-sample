@@ -8,6 +8,7 @@ export const logger = (
   console.log('New request:', {
     method: request.method,
     url: request.url,
+    query: request.query,
   });
 
   next();
