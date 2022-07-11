@@ -6,7 +6,7 @@ const app = express();
 app.use(logger);
 
 app.use('/', (req, res, next) => {
-  res.status(200).send('Hello world from admin');
+  res.status(200).send('Hello world from admin!!!');
 
   next();
 });

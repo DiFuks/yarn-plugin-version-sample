@@ -1,0 +1,3 @@
+releases:
+  "@difuks/sample-admin": major
+  yarn-plugin-version-sample: patch
