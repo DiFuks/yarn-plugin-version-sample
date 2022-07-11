@@ -8,7 +8,7 @@
     "start": "yarn workspaces foreach --interlaced --verbose --topological-dev --parallel run start"
   },
   "repository": "https://github.com/DiFuks/yarn-plugin-version-sample",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Dmitry Fuks",
   "license": "MIT",
   "private": true,

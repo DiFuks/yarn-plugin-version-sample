@@ -1,5 +1,0 @@
-releases:
-  "@difuks/sample-admin": patch
-  "@difuks/sample-common": minor
-  "@difuks/sample-login": patch
-  yarn-plugin-version-sample: patch
