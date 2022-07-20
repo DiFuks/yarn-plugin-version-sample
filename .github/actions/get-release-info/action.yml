@@ -6,9 +6,6 @@ inputs:
   github_token:
     description: 'Github token'
     required: true
-  tag:
-    description: 'Release tag'
-    required: true
 
 outputs:
   body:

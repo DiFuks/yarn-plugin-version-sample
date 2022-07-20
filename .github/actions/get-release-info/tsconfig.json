@@ -3,7 +3,6 @@
     "baseUrl": ".",
     "target": "es2015",
     "module": "commonjs",
-    "esModuleInterop": true,
     "strict": true,
     "moduleResolution": "node"
   }
