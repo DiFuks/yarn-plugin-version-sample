@@ -1,0 +1,31 @@
+name: 'Get release info'
+
+description: 'Get release info'
+
+inputs:
+  GITHUB_TOKEN:
+    description: 'Github token'
+    required: true
+  RELEASE_ID:
+    description: 'Release id or latest'
+    required: true
+    default: 'latest'
+
+outputs:
+  body:
+    description: 'Release body'
+  name:
+    description: 'Release name'
+  tag_name:
+    description: 'Release tag name'
+  url:
+    description: 'Release url'
+  author_login:
+    description: 'Author login'
+  author_avatar:
+    description: 'Author avatar'
+  author_url:
+    description: 'Author url'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
