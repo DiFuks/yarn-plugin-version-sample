@@ -1,26 +1,22 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-const getReleaseInfo = (releaseId = 'latest') => {
-  const githubToken = core.getInput('GITHUB_TOKEN');
+const getReleaseInfo = (tag) => {
+  const githubToken = core.getInput('github_token');
 
   const octokit = github.getOctokit(githubToken);
 
-  if (releaseId === 'latest') {
-    return octokit.rest.repos.getLatestRelease(github.context.repo)
-  }
-
   return octokit.rest.repos.getRelease({
     ...github.context.repo,
-    release_id: releaseId,
-  });
+    tag,
+  })
 }
 
 (async () => {
   try {
-    const releaseId = core.getInput('RELEASE_ID');
+    const tag = core.getInput('tag');
 
-    const releaseInfo = await getReleaseInfo(releaseId);
+    const releaseInfo = await getReleaseInfo(tag);
 
     core.setOutput('body', releaseInfo.body);
     core.setOutput('name', releaseInfo.name);

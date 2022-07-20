@@ -3,13 +3,12 @@ name: 'Get release info'
 description: 'Get release info'
 
 inputs:
-  GITHUB_TOKEN:
+  github_token:
     description: 'Github token'
     required: true
-  RELEASE_ID:
-    description: 'Release id or latest'
+  tag:
+    description: 'Release tag'
     required: true
-    default: 'latest'
 
 outputs:
   body:
@@ -28,4 +27,4 @@ outputs:
     description: 'Author url'
 runs:
   using: 'node16'
-  main: 'dist/index.js'
+  main: 'src/index.js'

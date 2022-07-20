@@ -11,12 +11,11 @@ jobs:
     steps:
       - name: Get release info
         id: release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: >-
-          releaseInfo="$(gh api -H "Accept: application/vnd.github+json" /repos/difuks/yarn-plugin-version-sample/releases/latest)"
+        uses: ./.github/actions/get-release-info
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref }}
 
-          echo "::set-output name=body::$($releaseInfo | jq '.body' )"
       - name: Send telegram message
         uses: appleboy/telegram-action@master
         with:
