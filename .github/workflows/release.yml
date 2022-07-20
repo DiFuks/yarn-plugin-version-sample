@@ -12,19 +12,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Get release info
-        id: release
-        uses: ./.github/actions/get-release-info
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ github.ref }}
+      - name: release
+        run: echo ${{ github.ref }}
 
-      - name: Send telegram message
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          format: markdown
-          message: |
-            Hello from Release
-            body: ${{ steps.release.outputs.body }}
+#      - name: Get release info
+#        id: release
+#        uses: ./.github/actions/get-release-info
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          tag: ${{ github.ref }}
+#
+#      - name: Send telegram message
+#        uses: appleboy/telegram-action@master
+#        with:
+#          to: ${{ secrets.TELEGRAM_TO }}
+#          token: ${{ secrets.TELEGRAM_TOKEN }}
+#          format: markdown
+#          message: |
+#            Hello from Release
+#            body: ${{ steps.release.outputs.body }}
