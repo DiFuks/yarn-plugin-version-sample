@@ -16,7 +16,7 @@ jobs:
         run: |
           releaseInfo="$(gh api -H "Accept: application/vnd.github+json" /repos/difuks/yarn-plugin-version-sample/releases/latest)"
           
-          echo "::set-output name=releaseInfo::$(info)"
+          echo "::set-output name=info::$(releaseInfo)"
       - name: Send telegram message
         uses: appleboy/telegram-action@master
         with:
