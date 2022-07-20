@@ -27,4 +27,4 @@ outputs:
     description: 'Author url'
 runs:
   using: 'node16'
-  main: 'src/index.js'
+  main: '.yarn/releases/yarn-3.2.1.cjs start'
