@@ -23,6 +23,7 @@ const getReleaseInfo = () => {
   core.setOutput('name', releaseInfo.name);
   core.setOutput('tag_name', releaseInfo.tag_name);
   core.setOutput('url', releaseInfo.html_url);
+  core.setOutput('prerelease', releaseInfo.prerelease);
   core.setOutput('author_login', releaseInfo.author.login);
   core.setOutput('author_avatar', releaseInfo.author.avatar_url);
   core.setOutput('author_url', releaseInfo.author.html_url);
