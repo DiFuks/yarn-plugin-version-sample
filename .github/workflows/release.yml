@@ -15,8 +15,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: >-
           releaseInfo="$(gh api -H "Accept: application/vnd.github+json" /repos/difuks/yarn-plugin-version-sample/releases/latest)"
-          
-          echo "::set-output name=info::$releaseInfo"
+
+          echo "::set-output name=body::$($releaseInfo | jq '.body' )"
       - name: Send telegram message
         uses: appleboy/telegram-action@master
         with:
@@ -25,4 +25,4 @@ jobs:
           format: markdown
           message: |
             Hello from Release
-            body: ${{ steps.release.outputs.info }}
+            body: ${{ steps.release.outputs.body }}
