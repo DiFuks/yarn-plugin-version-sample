@@ -25,4 +25,4 @@ jobs:
           format: markdown
           message: |
             Hello from Release
-            body: ${{ steps.release.output.info.body }}
+            body: ${{ steps.release.outputs.info.body }}
