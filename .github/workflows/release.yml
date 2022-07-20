@@ -27,3 +27,9 @@ jobs:
           message: |
             Hello from Release
             body: ${{ steps.release.outputs.body }}
+            name: ${{ steps.release.outputs.name }}
+            tag_name: ${{ steps.release.outputs.tag_name }}
+            prerelease: ${{ steps.release.outputs.prerelease }}
+            author_login: ${{ steps.release.outputs.author_login }}
+            author_avatar: ${{ steps.release.outputs.author_avatar }}
+            author_url: ${{ steps.release.outputs.author_url }}

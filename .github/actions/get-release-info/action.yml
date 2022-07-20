@@ -16,6 +16,8 @@ outputs:
     description: 'Release tag name'
   url:
     description: 'Release url'
+  prerelease:
+    description: 'Is prerelease or not'
   author_login:
     description: 'Author login'
   author_avatar:
