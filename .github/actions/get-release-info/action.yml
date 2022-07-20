@@ -24,4 +24,4 @@ outputs:
     description: 'Author url'
 runs:
   using: 'node16'
-  main: 'src/index.js'
+  main: 'dist/index.js'
