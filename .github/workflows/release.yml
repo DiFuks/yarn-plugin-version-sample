@@ -13,7 +13,7 @@ jobs:
         id: release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
+        run: >-
           releaseInfo="$(gh api -H "Accept: application/vnd.github+json" /repos/difuks/yarn-plugin-version-sample/releases/latest)"
           
           echo "::set-output name=info::$(releaseInfo)"
