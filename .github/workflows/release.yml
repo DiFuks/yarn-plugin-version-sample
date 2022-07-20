@@ -14,7 +14,7 @@ jobs:
 
       - name: Get release info
         id: release
-        uses: ./.github/actions/get-release-info
+        uses: .github/actions/get-release-info
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
