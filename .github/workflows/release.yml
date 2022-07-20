@@ -17,7 +17,6 @@ jobs:
         uses: ./.github/actions/get-release-info
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ github.ref }}
 
       - name: Send telegram message
         uses: appleboy/telegram-action@master
