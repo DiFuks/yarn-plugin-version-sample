@@ -9,6 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     name: notification
     steps:
+      - name: Get release info
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          releaseInfo = "$(gh api \
+          -H "Accept: application/vnd.github+json" \
+          /repos/difuks/yarn-plugin-version-sample/releases/latest)"
+          
+          echo $releaseInfo
       - name: Send telegram message
         uses: appleboy/telegram-action@master
         with:
