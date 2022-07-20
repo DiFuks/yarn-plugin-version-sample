@@ -13,19 +13,15 @@ const getReleaseInfo = (tag: string) => {
 }
 
 (async () => {
-  try {
-    const tag = core.getInput('tag');
+  const tag = core.getInput('tag');
 
-    const { data: releaseInfo } = await getReleaseInfo(tag);
+  const { data: releaseInfo } = await getReleaseInfo(tag);
 
-    core.setOutput('body', releaseInfo.body);
-    core.setOutput('name', releaseInfo.name);
-    core.setOutput('tag_name', releaseInfo.tag_name);
-    core.setOutput('url', releaseInfo.html_url);
-    core.setOutput('author_login', releaseInfo.author.login);
-    core.setOutput('author_avatar', releaseInfo.author.avatar_url);
-    core.setOutput('author_url', releaseInfo.author.html_url);
-  } catch (error) {
-    core.setFailed((error as Error).message);
-  }
+  core.setOutput('body', releaseInfo.body);
+  core.setOutput('name', releaseInfo.name);
+  core.setOutput('tag_name', releaseInfo.tag_name);
+  core.setOutput('url', releaseInfo.html_url);
+  core.setOutput('author_login', releaseInfo.author.login);
+  core.setOutput('author_avatar', releaseInfo.author.avatar_url);
+  core.setOutput('author_url', releaseInfo.author.html_url);
 })()

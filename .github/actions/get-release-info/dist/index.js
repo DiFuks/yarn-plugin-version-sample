@@ -8859,20 +8859,15 @@ const getReleaseInfo = (tag) => {
     return octokit.rest.repos.getRelease(Object.assign(Object.assign({}, github_1.default.context.repo), { release_id: Number(tag) }));
 };
 (() => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const tag = core_1.default.getInput('tag');
-        const { data: releaseInfo } = yield getReleaseInfo(tag);
-        core_1.default.setOutput('body', releaseInfo.body);
-        core_1.default.setOutput('name', releaseInfo.name);
-        core_1.default.setOutput('tag_name', releaseInfo.tag_name);
-        core_1.default.setOutput('url', releaseInfo.html_url);
-        core_1.default.setOutput('author_login', releaseInfo.author.login);
-        core_1.default.setOutput('author_avatar', releaseInfo.author.avatar_url);
-        core_1.default.setOutput('author_url', releaseInfo.author.html_url);
-    }
-    catch (error) {
-        core_1.default.setFailed(error.message);
-    }
+    const tag = core_1.default.getInput('tag');
+    const { data: releaseInfo } = yield getReleaseInfo(tag);
+    core_1.default.setOutput('body', releaseInfo.body);
+    core_1.default.setOutput('name', releaseInfo.name);
+    core_1.default.setOutput('tag_name', releaseInfo.tag_name);
+    core_1.default.setOutput('url', releaseInfo.html_url);
+    core_1.default.setOutput('author_login', releaseInfo.author.login);
+    core_1.default.setOutput('author_avatar', releaseInfo.author.avatar_url);
+    core_1.default.setOutput('author_url', releaseInfo.author.html_url);
 }))();
 
 
