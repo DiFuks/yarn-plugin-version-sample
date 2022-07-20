@@ -1,7 +1,7 @@
 require('../.pnp.cjs').setup();
 
-import * as github from '@actions/github';
-import * as core from '@actions/core';
+const github = require('@actions/github');
+const core = require('@actions/core');
 
 const getReleaseInfo = () => {
   const githubToken = core.getInput('github_token');
